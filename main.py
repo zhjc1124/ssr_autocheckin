@@ -1,4 +1,8 @@
 import requests
+
+base_url = 'http://www.gwbn-vpn.top'
+
+
 def checkin():
     email = input('email: ')
     password = input('password: ')
@@ -7,7 +11,7 @@ def checkin():
     email = email[0] + '%40' + email[1]
 
     session = requests.session()
-    login_url = 'https://www.refreshss.ml/auth/login'
+    login_url = base_url + '/auth/login'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -18,10 +22,10 @@ def checkin():
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
-        'Referer': 'https://www.refreshss.ml/user'
+        'Referer': base_url + '/user'
     }
 
-    response = session.post('https://www.refreshss.ml/user/checkin', headers=headers)
+    response = session.post(base_url + '/user/checkin', headers=headers)
 
 while True:
     try:
